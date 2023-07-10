@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		122A6CC22A5C2BA600EE18B1 /* QRPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122A6CC12A5C2BA600EE18B1 /* QRPointType.swift */; };
 		OBJ_33 /* BCH.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_8 /* BCH.swift */; };
 		OBJ_34 /* QR8bitByte.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* QR8bitByte.swift */; };
 		OBJ_35 /* QRBitBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* QRBitBuffer.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		122A6CC12A5C2BA600EE18B1 /* QRPointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRPointType.swift; sourceTree = "<group>"; };
 		OBJ_10 /* QRBitBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRBitBuffer.swift; sourceTree = "<group>"; };
 		OBJ_11 /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
 		OBJ_12 /* QRCodeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeError.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				122A6CC12A5C2BA600EE18B1 /* QRPointType.swift */,
 				OBJ_8 /* BCH.swift */,
 				OBJ_9 /* QR8bitByte.swift */,
 				OBJ_10 /* QRBitBuffer.swift */,
@@ -238,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				122A6CC22A5C2BA600EE18B1 /* QRPointType.swift in Sources */,
 				OBJ_33 /* BCH.swift in Sources */,
 				OBJ_34 /* QR8bitByte.swift in Sources */,
 				OBJ_35 /* QRBitBuffer.swift in Sources */,

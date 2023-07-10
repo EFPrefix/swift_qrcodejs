@@ -22,20 +22,13 @@
 
 import Foundation
 
-/// All possible errors that could occur when constructing `QRCode`.
-public enum QRCodeError: Error {
-    /// The thing you want to save is too large for `QRCode`.
-    case dataLengthExceedsCapacityLimit
-    /// Can not encode the given string using the specified encoding.
-    case text(String, incompatibleWithEncoding: String.Encoding)
-    /// Fill a new issue on GitHub, or submit a pull request.
-    case internalError(ImplmentationError)
-
-    /// Should probably contact developer is you ever see any of these.
-    public enum ImplmentationError {
-        /// fail to determine how large is the data.
-        case dataLengthIndeterminable
-        /// fail to find appropriate container for your data.
-        case dataLength(Int, exceedsCapacityLimit: Int)
-    }
+public enum QRPointType: Int {
+    case data = 0
+    case posCenter = 1
+    case posOther = 2
+    case alignCenter = 3
+    case alignOther = 4
+    case timing = 5
+    case format = 6
+    case version = 7
 }

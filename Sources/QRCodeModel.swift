@@ -24,16 +24,21 @@
 
 import Foundation
 
-struct QRCodeModel {
-    let typeNumber: Int
-    let errorCorrectLevel: QRErrorCorrectLevel
+public struct QRCodeModel {
+    public let typeNumber: Int
+    public let errorCorrectLevel: QRErrorCorrectLevel
     private var modules: [[Bool?]]! = nil
-    private(set) var moduleCount = 0
+    public private(set) var moduleCount = 0
     private let encodedText: QR8bitByte
     private var dataCache: [Int]
+    public let needTypeTable: Bool
+    private var position: [[Int]] = []
     
     init(data: Data,
-         errorCorrectLevel: QRErrorCorrectLevel) throws {
+         errorCorrectLevel: QRErrorCorrectLevel,
+         needTypeTable: Bool = false) throws {
+        self.needTypeTable = needTypeTable
+        
         self.encodedText = QR8bitByte(parsedData: data)
 
         self.typeNumber = try QRCodeType
@@ -109,6 +114,11 @@ struct QRCodeModel {
         #else
         let pos = QRPatternLocator[typeNumber]
         #endif
+        
+        if needTypeTable {
+            self.position = []
+        }
+        
         for i in pos.indices {
             for j in pos.indices {
                 let row = pos[i]
@@ -116,6 +126,11 @@ struct QRCodeModel {
                 if modules[row][col] != nil {
                     continue
                 }
+                
+                if needTypeTable {
+                    self.position.append([row, col])
+                }
+                
                 for r in -2...2 {
                     for c in -2...2 {
                         if r == -2 || r == 2 || c == -2 || c == 2 || r == 0 && c == 0 {
@@ -398,5 +413,70 @@ extension QRCodeModel {
         let ratio = abs(100 * darkCount / moduleCount / moduleCount - 50) / 5
         lostPoint += ratio * 10
         return lostPoint
+    }
+}
+
+extension QRCodeModel {
+    
+    public func getTypeTable() -> [[QRPointType]] {
+        if !needTypeTable {
+            return []
+        }
+        
+        let nCount: Int = self.moduleCount
+        let position: [[Int]] = self.position
+        let PD: [[Int]] = [[3, 3], [3, nCount - 4], [nCount - 4, 3]]
+        
+        var typeTable: [[QRPointType]] = Array(repeating: Array(repeating: QRPointType.data, count: nCount), count: nCount)
+        
+        for i in 8..<nCount - 7 {
+            typeTable[i][6] = QRPointType.timing
+            typeTable[6][i] = QRPointType.timing
+        }
+        
+        for i in 0..<position.count {
+            typeTable[position[i][0]][position[i][1]] = QRPointType.alignCenter
+            for r in -2...2 {
+                for c in -2...2 {
+                    if !(r == 0 && c == 0) {
+                        typeTable[position[i][0] + r][position[i][1] + c] = QRPointType.alignOther
+                    }
+                }
+            }
+        }
+        
+        for i in 0..<PD.count {
+            typeTable[PD[i][0]][PD[i][1]] = QRPointType.posCenter
+            for r in -4...4 {
+                for c in -4...4 {
+                    if PD[i][0] + r >= 0 && PD[i][0] + r < nCount && PD[i][1] + c >= 0 && PD[i][1] + c < nCount {
+                        if !(r == 0 && c == 0) {
+                            typeTable[PD[i][0] + r][PD[i][1] + c] = QRPointType.posOther
+                        }
+                    }
+                }
+            }
+        }
+        
+        for i in 0...8 {
+            if i != 6 {
+                typeTable[i][8] = QRPointType.format
+                typeTable[8][i] = QRPointType.format
+            }
+            if i < 7 {
+                typeTable[nCount - i - 1][8] = QRPointType.format
+            }
+            if i < 8 {
+                typeTable[8][nCount - i - 1] = QRPointType.format
+            }
+        }
+        
+        for i in (nCount - 11)...(nCount - 9) {
+            for j in 0...5 {
+                typeTable[i][j] = QRPointType.version
+                typeTable[j][i] = QRPointType.version
+            }
+        }
+        return typeTable
     }
 }
