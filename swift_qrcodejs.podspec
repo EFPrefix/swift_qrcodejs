@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   s.name         = "swift_qrcodejs"
   s.module_name  = "QRCodeSwift"
-  s.version      = "2.2.2"
+  s.version      = "2.3.0"
   s.summary      = "Cross-appleOS SIMPLE QRCode generator for swift, modified based on qrcodejs."
 
   # This description is used to generate tags and improve search results.
@@ -25,10 +25,10 @@ Pod::Spec.new do |s|
   s.authors            = { "ApolloZhu" => "public-apollonian@outlook.com" }
   s.social_media_url   = "http://github.com/ApolloZhu"
 
-  s.ios.deployment_target = "9.0"
-  s.osx.deployment_target = "10.9"
-  s.watchos.deployment_target = "2.0"
-  s.tvos.deployment_target = "9.0"
+  s.ios.deployment_target = "11.0"
+  s.osx.deployment_target = "10.13"
+  s.watchos.deployment_target = "6.0"
+  s.tvos.deployment_target = "11.0"
 
   s.source       = { :git => "https://github.com/ApolloZhu/swift_qrcodejs.git", :tag => s.version }
 

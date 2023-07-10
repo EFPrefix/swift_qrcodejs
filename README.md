@@ -36,7 +36,7 @@ but in general:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/ApolloZhu/swift_qrcodejs.git", from: "2.2.2"),
+    .package(url: "https://github.com/ApolloZhu/swift_qrcodejs.git", from: "2.3.0"),
 ]
 ```
 
@@ -50,7 +50,7 @@ dependencies: [
 <summary><strong>CocoaPods</strong></summary>
 
 ```ruby
-pod 'swift_qrcodejs', '~> 2.2.2'
+pod 'swift_qrcodejs', '~> 2.3.0'
 ```
 
 </details>
@@ -61,7 +61,7 @@ pod 'swift_qrcodejs', '~> 2.2.2'
 I assume you know what you are doing (because I don't), but you probably need something like this:
 
 ```ruby
-github "ApolloZhu/swift_qrcodejs" ~> 2.2.2
+github "ApolloZhu/swift_qrcodejs" ~> 2.3.0
 ```
 
 Note that [Carthage doesn't work with Xcode 12](https://github.com/Carthage/Carthage/issues/3019)
