@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 
-  s.name         = "swift_qrcodejs"
+  s.name         = "ef_swift_qrcodejs"
   s.module_name  = "QRCodeSwift"
   s.version      = "2.3.0"
   s.summary      = "Cross-appleOS SIMPLE QRCode generator for swift, modified based on qrcodejs."
@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
   s.watchos.deployment_target = "6.0"
   s.tvos.deployment_target = "11.0"
 
-  s.source       = { :git => "https://github.com/ApolloZhu/swift_qrcodejs.git", :tag => s.version }
+  s.source       = { :git => "https://github.com/EFPrefix/swift_qrcodejs.git", :tag => s.version }
 
   s.source_files  = "Sources/**/*.{h,swift}"
   s.swift_versions = ['4.2', '5.0']
