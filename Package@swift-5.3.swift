@@ -18,12 +18,14 @@ let package = Package(
         .target(
             name: "QRCodeSwift",
             path: "Sources",
-            exclude: ["Info.plist"]),
+            exclude: ["Info.plist"]
+        ),
         .testTarget(
             name: "QRCodeSwiftTests",
             dependencies: ["QRCodeSwift"],
             path: "Tests/QRCodeSwiftTests",
-            exclude: ["Info.plist"]),
+            exclude: ["Info.plist"]
+        )
     ],
     swiftLanguageVersions: [.v5]
 )

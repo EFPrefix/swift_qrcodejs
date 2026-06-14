@@ -22,6 +22,8 @@
 
 /* Begin PBXBuildFile section */
 		122A6CC22A5C2BA600EE18B1 /* QRPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122A6CC12A5C2BA600EE18B1 /* QRPointType.swift */; };
+		C697D3052FDF68A90082D980 /* Package@swift-5.9.swift in Sources */ = {isa = PBXBuildFile; fileRef = C697D3042FDF68A90082D980 /* Package@swift-5.9.swift */; };
+		C697D3062FDF68A90082D980 /* Package@swift-5.3.swift in Sources */ = {isa = PBXBuildFile; fileRef = C697D3032FDF68A90082D980 /* Package@swift-5.3.swift */; };
 		OBJ_33 /* BCH.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_8 /* BCH.swift */; };
 		OBJ_34 /* QR8bitByte.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* QR8bitByte.swift */; };
 		OBJ_35 /* QRBitBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* QRBitBuffer.swift */; };
@@ -60,6 +62,8 @@
 
 /* Begin PBXFileReference section */
 		122A6CC12A5C2BA600EE18B1 /* QRPointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRPointType.swift; sourceTree = "<group>"; };
+		C697D3032FDF68A90082D980 /* Package@swift-5.3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package@swift-5.3.swift"; sourceTree = "<group>"; };
+		C697D3042FDF68A90082D980 /* Package@swift-5.9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package@swift-5.9.swift"; sourceTree = "<group>"; };
 		OBJ_10 /* QRBitBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRBitBuffer.swift; sourceTree = "<group>"; };
 		OBJ_11 /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
 		OBJ_12 /* QRCodeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeError.swift; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
+				C697D3032FDF68A90082D980 /* Package@swift-5.3.swift */,
+				C697D3042FDF68A90082D980 /* Package@swift-5.9.swift */,
 				OBJ_7 /* Sources */,
 				OBJ_22 /* Tests */,
 				OBJ_25 /* Products */,
@@ -271,6 +277,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				C697D3052FDF68A90082D980 /* Package@swift-5.9.swift in Sources */,
+				C697D3062FDF68A90082D980 /* Package@swift-5.3.swift in Sources */,
 				OBJ_62 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
